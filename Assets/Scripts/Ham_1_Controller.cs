@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class HamsterController : MonoBehaviour
@@ -10,15 +11,33 @@ public class HamsterController : MonoBehaviour
 
     private Vector2 input;
 
+    private Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     private void Update()
     {
         if (!isMoving)
         {
             input.x = Input.GetAxisRaw("Horizontal");
             input.y = Input.GetAxisRaw("Vertical");
+          
+            
+            Debug.Log("This is input.x" + input.x);
+            Debug.Log("This is input.y" + input.y);
 
+            
+
+            if (input.x != 0) input.y = 0;
+            
             if (input != Vector2.zero)
             {
+
+                animator.SetFloat("movex", input.x);
+                animator.SetFloat("movey", input.y);
 
                 var targetPos = transform.position;
                 targetPos.x += input.x;
