@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b16c8371596448c4aa0ac2f4bd6ec1dc
+guid: 129da9d307ada06479d8523465563add
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hamster_01_0
+      name: Hmaster_01_0
       rect:
         serializedVersion: 2
-        x: 56
-        y: 519
-        width: 94
-        height: 94
+        x: 247
+        y: 2223
+        width: 392
+        height: 395
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1aafcf159e22f264da598d83bc87781e
-      internalID: -183507122
+      spriteID: 0b04651dcc9522c4b93f359a589ac1eb
+      internalID: -376488274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hamster_01_1
+      name: Hmaster_01_1
       rect:
         serializedVersion: 2
-        x: 153
-        y: 525
-        width: 94
-        height: 93
+        x: 656
+        y: 2246
+        width: 399
+        height: 397
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c131a8ad0fe10134f925ccca086ceb0a
-      internalID: -658091049
+      spriteID: 25ea1ebca51cc344ca61a35863733073
+      internalID: -1925672614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hamster_01_2
+      name: Hmaster_01_2
       rect:
         serializedVersion: 2
-        x: 252
-        y: 521
-        width: 94
-        height: 94
+        x: 1081
+        y: 2230
+        width: 398
+        height: 398
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b63b3c3292079b947a4e278f547e4bba
-      internalID: -1400466864
+      spriteID: 4398a2d635ede0d4eb74a0c46468d7d3
+      internalID: -543073289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hamster_01_3
+      name: Hmaster_01_3
       rect:
         serializedVersion: 2
-        x: 349
-        y: 516
-        width: 94
-        height: 94
+        x: 1495
+        y: 2208
+        width: 399
+        height: 397
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d5a3bc59ba8d2f4582deff6f5eeede5
-      internalID: -438695793
+      spriteID: 787d3caa585d344479fbba19cba1fb99
+      internalID: 2008757409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hamster_01_4
+      name: Hmaster_01_4
       rect:
         serializedVersion: 2
-        x: 57
-        y: 384
-        width: 93
-        height: 93
+        x: 249
+        y: 1644
+        width: 394
+        height: 395
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a323c63289e0524f9cecb5a7f8618be
-      internalID: -1321707498
+      spriteID: d9ba7803295f60c4a9d3ffbea38561df
+      internalID: -1130887733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hamster_01_5
+      name: Hmaster_01_5
       rect:
         serializedVersion: 2
-        x: 153
-        y: 384
-        width: 94
-        height: 94
+        x: 657
+        y: 1645
+        width: 397
+        height: 396
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f1fc7b7967b29643a2011ed2c5b9593
-      internalID: -128409039
+      spriteID: d0ae4509b873305489a425daddcff460
+      internalID: -1942951449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hamster_01_6
+      name: Hmaster_01_6
       rect:
         serializedVersion: 2
-        x: 254
-        y: 386
-        width: 93
-        height: 95
+        x: 1087
+        y: 1654
+        width: 396
+        height: 397
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 052ede8f70a7ab544857a257772acabd
-      internalID: -1041782636
+      spriteID: bfe2d2b750a2eba4c999017d0e8d23fe
+      internalID: 1134671222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hamster_01_7
+      name: Hmaster_01_7
       rect:
         serializedVersion: 2
-        x: 350
-        y: 382
-        width: 94
-        height: 94
+        x: 1496
+        y: 1637
+        width: 399
+        height: 396
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +271,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88df8e265d3a07a41b3c9071b01a911c
-      internalID: -1780818429
+      spriteID: 873ca53b8ab62c344bcf49cfc1ac815f
+      internalID: 1415935336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hamster_01_8
+      name: Hmaster_01_8
       rect:
         serializedVersion: 2
-        x: 37
-        y: 266
-        width: 97
-        height: 98
+        x: 162
+        y: 1139
+        width: 411
+        height: 412
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +292,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dcbbcf68206b5842ba30d03206ad211
-      internalID: -169166368
+      spriteID: 72b731716a01b7d45a98cef006915b21
+      internalID: 428613132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hamster_01_9
+      name: Hmaster_01_9
       rect:
         serializedVersion: 2
-        x: 50
-        y: 170
-        width: 70
-        height: 73
+        x: 218
+        y: 728
+        width: 295
+        height: 306
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,20 +313,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c475d365bc934c6499c9b942a2c27be8
-      internalID: -1628480096
+      spriteID: c0848b2a33ca3c14d8c8089283eaeb07
+      internalID: 131641390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hamster_01_10
+      name: Hmaster_01_10
       rect:
         serializedVersion: 2
-        x: 132
-        y: 170
-        width: 69
-        height: 73
+        x: 566
+        y: 728
+        width: 296
+        height: 306
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -334,20 +334,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e4118811c21e434ebde1f23a2707315
-      internalID: -1771669529
+      spriteID: 4984a71e51754744abc4426e24c47f7d
+      internalID: -1227093511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hamster_01_11
+      name: Hmaster_01_11
       rect:
         serializedVersion: 2
-        x: 214
-        y: 170
-        width: 67
-        height: 73
+        x: 917
+        y: 728
+        width: 297
+        height: 306
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,20 +355,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f770ae109a83f5549b918524e9bd2c39
-      internalID: 772083249
+      spriteID: f5722bb3903780b44a3d5c51f90bbc83
+      internalID: -849891807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hamster_01_12
+      name: Hmaster_01_12
       rect:
         serializedVersion: 2
-        x: 299
-        y: 170
-        width: 66
-        height: 73
+        x: 1268
+        y: 728
+        width: 297
+        height: 306
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,20 +376,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1358d999238d5be478f1e4a3006c18da
-      internalID: 160913588
+      spriteID: 36d48ee8d914c8e4fb710d31b801339f
+      internalID: 186234626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hamster_01_13
+      name: Hmaster_01_13
       rect:
         serializedVersion: 2
-        x: 383
-        y: 170
-        width: 66
-        height: 73
+        x: 1627
+        y: 728
+        width: 297
+        height: 306
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,20 +397,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe5e59c34ab198f44b14e3654561607d
-      internalID: 1580225911
+      spriteID: 60cf558e9b0fbe041bf177c4fc1dec17
+      internalID: 1707557565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hamster_01_14
+      name: Hmaster_01_14
       rect:
         serializedVersion: 2
-        x: 37
-        y: 48
-        width: 100
-        height: 101
+        x: 161
+        y: 208
+        width: 424
+        height: 427
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,20 +418,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c92af253c3ddd2418c44caaa9588b69
-      internalID: 1542110348
+      spriteID: 6be6fc8b4d00e5b48957343f4f0cbe34
+      internalID: -1103273786
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hamster_01_15
+      name: Hmaster_01_15
       rect:
         serializedVersion: 2
-        x: 142
-        y: 48
-        width: 100
-        height: 101
+        x: 608
+        y: 209
+        width: 426
+        height: 427
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -439,20 +439,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a36be308e30c5245b439bab2cb5e837
-      internalID: -935040325
+      spriteID: 7536825949287f548a5a9c687db320d4
+      internalID: 1398897864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hamster_01_16
+      name: Hmaster_01_16
       rect:
         serializedVersion: 2
-        x: 251
-        y: 49
-        width: 101
-        height: 100
+        x: 1077
+        y: 209
+        width: 427
+        height: 427
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -460,20 +460,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9636c6e483752246b796c3a396847ff
-      internalID: 448808810
+      spriteID: 834b2b9b94d6d3b4a967ab6f42ea17c8
+      internalID: -2065995457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hamster_01_17
+      name: Hmaster_01_17
       rect:
         serializedVersion: 2
-        x: 356
-        y: 48
-        width: 101
-        height: 101
+        x: 1526
+        y: 208
+        width: 425
+        height: 427
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -481,8 +481,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01c0fb6afb10c7d40877962cd5e135ee
-      internalID: -71434086
+      spriteID: b56aecf4cdfc9914782b2aa17011dd0b
+      internalID: 1070213735
       vertices: []
       indices: 
       edges: []
@@ -498,24 +498,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hamster_01_0: -183507122
-      Hamster_01_1: -658091049
-      Hamster_01_10: -1771669529
-      Hamster_01_11: 772083249
-      Hamster_01_12: 160913588
-      Hamster_01_13: 1580225911
-      Hamster_01_14: 1542110348
-      Hamster_01_15: -935040325
-      Hamster_01_16: 448808810
-      Hamster_01_17: -71434086
-      Hamster_01_2: -1400466864
-      Hamster_01_3: -438695793
-      Hamster_01_4: -1321707498
-      Hamster_01_5: -128409039
-      Hamster_01_6: -1041782636
-      Hamster_01_7: -1780818429
-      Hamster_01_8: -169166368
-      Hamster_01_9: -1628480096
+      Hmaster_01_0: -376488274
+      Hmaster_01_1: -1925672614
+      Hmaster_01_10: -1227093511
+      Hmaster_01_11: -849891807
+      Hmaster_01_12: 186234626
+      Hmaster_01_13: 1707557565
+      Hmaster_01_14: -1103273786
+      Hmaster_01_15: 1398897864
+      Hmaster_01_16: -2065995457
+      Hmaster_01_17: 1070213735
+      Hmaster_01_2: -543073289
+      Hmaster_01_3: 2008757409
+      Hmaster_01_4: -1130887733
+      Hmaster_01_5: -1942951449
+      Hmaster_01_6: 1134671222
+      Hmaster_01_7: 1415935336
+      Hmaster_01_8: 428613132
+      Hmaster_01_9: 131641390
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
