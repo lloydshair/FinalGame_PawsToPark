@@ -11,9 +11,21 @@ public class MainMenu : MonoBehaviour
     {
 
         Debug.Log("button is clicked");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadSceneAsync(1);
 
     }
+
+    public void HowToPlay()
+    {
+
+        SceneManager.LoadSceneAsync(3);
+    }
+
+    public void Options() {
+
+        SceneManager.LoadSceneAsync(2);
+    }
+
 
     public void QuitGame()
     {
