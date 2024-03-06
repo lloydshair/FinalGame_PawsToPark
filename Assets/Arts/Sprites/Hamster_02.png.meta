@@ -113,10 +113,10 @@ TextureImporter:
       name: Hamster_02_0
       rect:
         serializedVersion: 2
-        x: 51
-        y: 485
-        width: 84
-        height: 85
+        x: 248
+        y: 2257
+        width: 386
+        height: 433
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: Hamster_02_1
       rect:
         serializedVersion: 2
-        x: 139
-        y: 490
-        width: 83
-        height: 85
+        x: 659
+        y: 2325
+        width: 389
+        height: 388
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,10 +155,10 @@ TextureImporter:
       name: Hamster_02_2
       rect:
         serializedVersion: 2
-        x: 229
-        y: 488
-        width: 81
-        height: 82
+        x: 1086
+        y: 2313
+        width: 377
+        height: 379
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,10 +176,10 @@ TextureImporter:
       name: Hamster_02_3
       rect:
         serializedVersion: 2
-        x: 314
-        y: 484
-        width: 88
-        height: 88
+        x: 1489
+        y: 2295
+        width: 405
+        height: 403
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: Hamster_02_4
       rect:
         serializedVersion: 2
-        x: 51
-        y: 351
-        width: 84
-        height: 84
+        x: 249
+        y: 1663
+        width: 386
+        height: 387
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,10 +218,10 @@ TextureImporter:
       name: Hamster_02_5
       rect:
         serializedVersion: 2
-        x: 138
-        y: 351
-        width: 83
-        height: 84
+        x: 653
+        y: 1665
+        width: 390
+        height: 386
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,10 +239,10 @@ TextureImporter:
       name: Hamster_02_6
       rect:
         serializedVersion: 2
-        x: 229
-        y: 352
-        width: 81
-        height: 84
+        x: 1087
+        y: 1673
+        width: 377
+        height: 378
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,10 +260,10 @@ TextureImporter:
       name: Hamster_02_7
       rect:
         serializedVersion: 2
-        x: 314
-        y: 348
-        width: 88
-        height: 89
+        x: 1490
+        y: 1655
+        width: 404
+        height: 402
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,10 +281,10 @@ TextureImporter:
       name: Hamster_02_8
       rect:
         serializedVersion: 2
-        x: 32
-        y: 223
-        width: 90
-        height: 92
+        x: 160
+        y: 1061
+        width: 413
+        height: 415
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,10 +302,10 @@ TextureImporter:
       name: Hamster_02_9
       rect:
         serializedVersion: 2
-        x: 46
-        y: 144
-        width: 63
-        height: 67
+        x: 218
+        y: 685
+        width: 295
+        height: 308
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,10 +323,10 @@ TextureImporter:
       name: Hamster_02_10
       rect:
         serializedVersion: 2
-        x: 119
-        y: 144
-        width: 64
-        height: 67
+        x: 565
+        y: 686
+        width: 297
+        height: 307
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,10 +344,10 @@ TextureImporter:
       name: Hamster_02_11
       rect:
         serializedVersion: 2
-        x: 195
-        y: 144
-        width: 62
-        height: 67
+        x: 917
+        y: 686
+        width: 297
+        height: 307
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,10 +365,10 @@ TextureImporter:
       name: Hamster_02_12
       rect:
         serializedVersion: 2
-        x: 268
-        y: 144
-        width: 63
-        height: 67
+        x: 1268
+        y: 685
+        width: 297
+        height: 308
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,10 +386,10 @@ TextureImporter:
       name: Hamster_02_13
       rect:
         serializedVersion: 2
-        x: 344
-        y: 144
-        width: 63
-        height: 67
+        x: 1627
+        y: 685
+        width: 297
+        height: 308
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -407,10 +407,10 @@ TextureImporter:
       name: Hamster_02_14
       rect:
         serializedVersion: 2
-        x: 33
-        y: 37
-        width: 91
-        height: 93
+        x: 164
+        y: 186
+        width: 420
+        height: 421
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -428,10 +428,10 @@ TextureImporter:
       name: Hamster_02_15
       rect:
         serializedVersion: 2
-        x: 130
-        y: 37
-        width: 91
-        height: 93
+        x: 616
+        y: 186
+        width: 424
+        height: 423
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -449,10 +449,10 @@ TextureImporter:
       name: Hamster_02_16
       rect:
         serializedVersion: 2
-        x: 225
-        y: 37
-        width: 91
-        height: 92
+        x: 1069
+        y: 180
+        width: 423
+        height: 423
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -470,10 +470,10 @@ TextureImporter:
       name: Hamster_02_17
       rect:
         serializedVersion: 2
-        x: 321
-        y: 36
-        width: 92
-        height: 93
+        x: 1524
+        y: 180
+        width: 421
+        height: 423
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
