@@ -2,54 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HamsterController : MonoBehaviour
+public class Hamster1Control : MonoBehaviour
 {
     public float moveSpeed;
 
     private bool isMoving;
-
-    private Vector2 input;
-
+    Vector3 input;
     private void Update()
-    {
-        gameObject.tag = "Player_01";
-    
-
-    }
-    private void FixedUpdate()
     {
         if (gameObject.CompareTag("Player_01") && !isMoving)
         {
-            input.x = Input.GetAxisRaw("Horizontal");
-            input.y = Input.GetAxisRaw("Vertical");
+            float moveHorizontal = 0f;
+            float moveVertical = 0f;
 
-            if (input != Vector2.zero)
-            {
+            // Check if keys are pressed
+            if (Input.GetKey(KeyCode.RightArrow))
+                moveHorizontal = 1f;
+            else if (Input.GetKey(KeyCode.LeftArrow))
+                moveHorizontal = -1f;
 
-                var targetPos = transform.position;
-                targetPos.x += input.x;
-                targetPos.y += input.y;
+            if (Input.GetKey(KeyCode.UpArrow))
+                moveVertical = 1f;
+            else if (Input.GetKey(KeyCode.DownArrow))
+                moveVertical = -1f;
 
-                StartCoroutine(Move(targetPos));
-            }
+            // Calculate the input vector
+            input = new Vector3(moveHorizontal, moveVertical, 0f);
 
 
+
+           
         }
-
     }
 
+    private void FixedUpdate()
+    {
+        if (input != Vector3.zero)
+        {
+           GetComponent<Rigidbody2D>().velocity = input*moveSpeed;
+        }
+    }
     IEnumerator Move(Vector3 targetPos)
     {
-
         isMoving = true;
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
-
         {
+            // Move towards the target position
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
             yield return null;
         }
+        // Ensure that the position is exactly at the target position
         transform.position = targetPos;
         isMoving = false;
     }
-
 }

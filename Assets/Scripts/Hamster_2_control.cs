@@ -2,31 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+
+
+public class Hamster2Control : MonoBehaviour
 {
     public float moveSpeed;
 
     private bool isMoving;
-
-    private Vector2 input;
-
+    Vector3 input2;
     private void Update()
     {
-
-        
         if (gameObject.CompareTag("Player_02") && !isMoving)
         {
-            input.x = Input.GetKey(KeyCode.D) ? 1 : Input.GetKey(KeyCode.A) ? -1 : 0;
-            input.y = Input.GetKey(KeyCode.W) ? 1 : Input.GetKey(KeyCode.S) ? -1 : 0;
+            float moveHorizontal = 0f;
+            float moveVertical = 0f;
 
-            if (input != Vector2.zero)
-            {
-                var targetPos = transform.position;
-                targetPos.x += input.x;
-                targetPos.y += input.y;
+            // Check if keys are pressed
+            if (Input.GetKey(KeyCode.D))
+                moveHorizontal = 1f;
+            else if (Input.GetKey(KeyCode.A))
+                moveHorizontal = -1f;
 
-                StartCoroutine(Move(targetPos));
-            }
+            if (Input.GetKey(KeyCode.W))
+                moveVertical = 1f;
+            else if (Input.GetKey(KeyCode.S))
+                moveVertical = -1f;
+
+            
+            // Calculate the input vector
+            input2 = new Vector3(moveHorizontal, moveVertical, 0f);
+
+            
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (input2 != Vector3.zero)
+        {
+            // Calculate the target position
+            GetComponent<Rigidbody2D>().velocity = input2 * moveSpeed; ;
+
+          
         }
     }
 
@@ -35,9 +52,11 @@ public class CharacterController : MonoBehaviour
         isMoving = true;
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
+            // Move towards the target position
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
             yield return null;
         }
+        // Ensure that the position is exactly at the target position
         transform.position = targetPos;
         isMoving = false;
     }
