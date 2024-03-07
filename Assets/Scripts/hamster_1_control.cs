@@ -13,6 +13,11 @@ public class HamsterController : MonoBehaviour
     private void Update()
     {
         gameObject.tag = "Player_01";
+    
+
+    }
+    private void FixedUpdate()
+    {
         if (gameObject.CompareTag("Player_01") && !isMoving)
         {
             input.x = Input.GetAxisRaw("Horizontal");
