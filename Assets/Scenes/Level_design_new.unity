@@ -5812,7 +5812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 831001989}
   player2: {fileID: 193053182}
-  speed: 1
+  speed: 2
 --- !u!212 &1093264311
 SpriteRenderer:
   m_ObjectHideFlags: 0
