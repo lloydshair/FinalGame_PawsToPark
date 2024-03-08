@@ -8,6 +8,12 @@ public class Hamster1Control : MonoBehaviour
 
     private bool isMoving;
     Vector3 input;
+
+    private bool isHit;
+
+    
+    public GameObject gameOverScreen;
+
     private void Update()
     {
         if (gameObject.CompareTag("Player_01") && !isMoving)
@@ -55,4 +61,18 @@ public class Hamster1Control : MonoBehaviour
         transform.position = targetPos;
         isMoving = false;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("baby was hit");
+        if (collision.tag == "baby_0" && !isHit)
+        {
+            isHit = true;
+            gameOverScreen.SetActive(true);
+            Time.timeScale = 0;
+
+        }
+    }
+
+   
 }
