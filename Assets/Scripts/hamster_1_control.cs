@@ -10,7 +10,9 @@ public class Hamster1Control : MonoBehaviour
     Vector3 input;
 
     private bool isHit;
-
+    private bool isPowerActive = false;
+    private float powerDuration = 30f;
+    private float powerTimer = 0f;
     
     public GameObject gameOverScreen;
 
@@ -35,7 +37,16 @@ public class Hamster1Control : MonoBehaviour
             // Calculate the input vector
             input = new Vector3(moveHorizontal, moveVertical, 0f);
 
+            //powerups
+            if (isPowerActive)
+            {
+                powerTimer -= Time.deltaTime;
 
+                if (powerTimer <= 0f)
+                {
+                    DeactivatePowerup();
+                }
+            }
 
            
         }
@@ -74,5 +85,26 @@ public class Hamster1Control : MonoBehaviour
         }
     }
 
-   
+   public void ActivatePowerup()
+    {
+        if (!isPowerActive)
+        {
+            moveSpeed += 3f;
+            isPowerActive = true;
+            powerTimer = powerDuration;
+            Debug.Log("Powerup collect with speed " + moveSpeed);
+        }
+        else
+        {
+            powerTimer = powerDuration;
+
+        }
+    }
+
+    private void DeactivatePowerup()
+    {
+        moveSpeed -= 3f;
+        isPowerActive = false;
+        Debug.Log("Powerup gone speed gone back to " + moveSpeed);
+    }
 }
