@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/main_menu.unity
+    path: Assets/Scenes/HomeScreen/main_menu.unity
     guid: 4f37725729fd7644f8b5285dd4efc401
   - enabled: 1
     path: Assets/Scenes/Level_design_new.unity
     guid: 2d91daf5fbc24084e829ada651cfb72c
   - enabled: 1
-    path: Assets/Scenes/options.unity
+    path: Assets/Scenes/HomeScreen/options.unity
     guid: dc999d7c65660470f9c59b2be43d37c5
   - enabled: 1
-    path: Assets/Scenes/how_to_play.unity
+    path: Assets/Scenes/HomeScreen/how_to_play.unity
     guid: dca3306d59b2746e2bbf41d06323b6f2
   - enabled: 0
     path: Assets/Scenes/Level_design.unity
