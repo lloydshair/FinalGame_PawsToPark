@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
-
+using UnityEngine.AI;
 public class EnemySpawn : MonoBehaviour
 {
+    [SerializeField] Transform target;
+    NavMeshAgent agent;
     public GameObject player1;
     public GameObject player2;
     public float speed;
@@ -19,7 +21,10 @@ public class EnemySpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
     // Update is called once per frame
@@ -38,8 +43,7 @@ public class EnemySpawn : MonoBehaviour
         else  {
             chaseTarget = player1;
         }
-        target = Vector2.MoveTowards(this.transform.position, chaseTarget.transform.position, speed * Time.deltaTime);
-        transform.position = new Vector3(target.x, target.y, transform.position.z);
+        agent.SetDestination(chaseTarget.transform.position);
 
         UpdateFreezeTime();
         
