@@ -12,6 +12,10 @@ public class EnemySpawn : MonoBehaviour
     private float distance1;
     private float distance2;
 
+    //powerup specs
+    private bool isFrozen = false;
+    private float freezeTimer = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,5 +40,41 @@ public class EnemySpawn : MonoBehaviour
         }
         target = Vector2.MoveTowards(this.transform.position, chaseTarget.transform.position, speed * Time.deltaTime);
         transform.position = new Vector3(target.x, target.y, transform.position.z);
+
+        UpdateFreezeTime();
+        
+    }
+
+    public void UpdateFreezeTime()
+    {
+        //baby powerup
+        if (isFrozen)
+        {
+            freezeTimer -= Time.deltaTime;
+
+            if (freezeTimer <= 0f)
+            {
+                Unfreeze();
+            }
+        }
+    }
+
+    public void FreezeBaby(float duration)
+    {
+        if (!isFrozen)
+        {
+            isFrozen = true;
+            freezeTimer = duration;
+            speed = 0f;
+            Debug.Log("enemy frozen for " + duration);
+        }
+    
+    }
+
+    private void Unfreeze()
+    {
+        isFrozen = false;
+        speed = 2f;
+        Debug.Log("baby unfrozen");
     }
 }
