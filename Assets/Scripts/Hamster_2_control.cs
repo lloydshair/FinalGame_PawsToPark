@@ -13,7 +13,7 @@ public class Hamster2Control : MonoBehaviour
     private bool isHit;
 
     private bool isPowerActive = false;
-    private float powerDuration = 30f;
+    private float powerDuration = 10f;
     private float powerTimer = 0f;
 
 
