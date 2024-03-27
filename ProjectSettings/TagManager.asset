@@ -7,6 +7,8 @@ TagManager:
   - Player_01
   - Player_02
   - baby_0
+  - Lettuce
+  - Bottle
   layers:
   - Default
   - TransparentFX

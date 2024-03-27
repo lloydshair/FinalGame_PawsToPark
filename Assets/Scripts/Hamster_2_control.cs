@@ -18,6 +18,8 @@ public class Hamster2Control : MonoBehaviour
 
 
     public GameObject gameOverScreen;
+    public GameObject instructionScreen;
+    public GameObject instructionScreen2;
 
     private void Update()
     {
@@ -91,6 +93,18 @@ public class Hamster2Control : MonoBehaviour
 
 
         }
+
+        if (collision.tag == "Lettuce")
+        {
+            StartCoroutine(ShowInstruction());
+
+        }
+
+        if (collision.tag == "Bottle")
+        {
+            StartCoroutine(ShowInstruction2());
+
+        }
     }
 
     public void ActivatePowerup()
@@ -116,4 +130,23 @@ public class Hamster2Control : MonoBehaviour
         Debug.Log("Powerup gone speed gone back to " + moveSpeed);
     }
 
+    IEnumerator ShowInstruction()
+    {
+
+        instructionScreen.SetActive(true);
+
+        yield return new WaitForSeconds(4f);
+
+        instructionScreen.SetActive(false);
+
+    }
+
+    IEnumerator ShowInstruction2()
+    {
+        instructionScreen2.SetActive(true);
+
+        yield return new WaitForSeconds(4f);
+
+        instructionScreen2.SetActive(false);
+    }
 }
