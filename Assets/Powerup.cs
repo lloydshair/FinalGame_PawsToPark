@@ -5,6 +5,7 @@ using UnityEngine;
 public class Powerup : MonoBehaviour
 {
     private bool isCollected = false;
+    public GameObject instructionScreen;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -34,4 +35,6 @@ public class Powerup : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+ 
 }
