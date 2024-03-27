@@ -7,8 +7,15 @@ TagManager:
   - Player_01
   - Player_02
   - baby_0
+<<<<<<< Updated upstream
   - Lettuce
   - Bottle
+=======
+  - codeText
+  - door
+  - puzzlebox
+  - openbox
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
