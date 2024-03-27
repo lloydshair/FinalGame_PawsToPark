@@ -24,12 +24,22 @@ public class player_movement : MonoBehaviour
 
     public GameObject gameOverScreen;
 
+    public GameObject codePanel, closeDoor, openDoor, riddlePanel;
+    private bool boxIsHit;
+
+    public static bool isDoorOpen = false;
+
+
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         rbHamster = GetComponent<Rigidbody2D>();
-
+        codePanel.SetActive(false);
+        closeDoor.SetActive(true);
+        openDoor.SetActive(false);
 
     }
 
@@ -64,6 +74,14 @@ public class player_movement : MonoBehaviour
             rbHamster.velocity = new Vector2(rbHamster.velocity.x, 0);
         }
 
+        if(isDoorOpen)
+        {
+            codePanel.SetActive(false);
+            closeDoor.SetActive(false);
+            openDoor.SetActive(true);
+
+        }
+
     }
 
     private void FixedUpdate()
@@ -90,7 +108,7 @@ public class player_movement : MonoBehaviour
         transform.position = targetPos;
         isMoving = false;
     }
-
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("baby was hit");
@@ -100,6 +118,27 @@ public class player_movement : MonoBehaviour
             gameOverScreen.SetActive(true);
             Time.timeScale = 0;
 
+
+        }
+
+        Debug.Log("door was hit");
+        if(collision.tag =="door" && !isDoorOpen)
+        {
+            codePanel.SetActive(true);
+        }
+
+        Debug.Log("door was hit");
+        if (collision.tag == "puzzlebox" && !boxIsHit)
+        {
+            riddlePanel.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name.Equals("door"))
+        {
+            codePanel.SetActive(false);
 
         }
     }
@@ -126,6 +165,7 @@ public class player_movement : MonoBehaviour
         isPowerActive = false;
         Debug.Log("Powerup gone speed gone back to " + moveSpeed);
     }
+
 
 }
 
