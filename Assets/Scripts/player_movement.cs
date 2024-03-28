@@ -82,6 +82,16 @@ public class player_movement : MonoBehaviour
 
         }
 
+        //powerups
+        if (isPowerActive)
+        {
+            powerTimer -= Time.deltaTime;
+
+            if (powerTimer <= 0f)
+            {
+                DeactivatePowerup();
+            }
+        }
     }
 
     private void FixedUpdate()
