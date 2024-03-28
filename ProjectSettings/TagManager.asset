@@ -10,7 +10,10 @@ TagManager:
   - baby_0
   - Bottle
   - Lettuce
+<<<<<<< Updated upstream
   - openBox
+=======
+>>>>>>> Stashed changes
   - puzzleBox
   layers:
   - Default
