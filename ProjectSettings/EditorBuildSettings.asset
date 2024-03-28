@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HomeScreen/main_menu.unity
     guid: 4f37725729fd7644f8b5285dd4efc401
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level_design_new.unity
     guid: 2d91daf5fbc24084e829ada651cfb72c
   - enabled: 1
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/FirstLevelReal.unity
+    guid: fe91ecdbb7e44413db6bc15f3cbbf0df
   m_configObjects: {}
