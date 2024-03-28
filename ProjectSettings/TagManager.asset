@@ -4,16 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - door
+ - door
   - Player_02
   - Player_01
   - baby_0
   - Bottle
   - Lettuce
-<<<<<<< Updated upstream
-  - openBox
-=======
->>>>>>> Stashed changes
+  - openBox  
   - puzzleBox
   layers:
   - Default
