@@ -8,7 +8,7 @@ public class codePanel : MonoBehaviour
     string enteredCode = "";
 
     // Define your correct code here
-    string correctCode = "12345";
+    string correctCode = "1916151475";
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +36,7 @@ public class codePanel : MonoBehaviour
         enteredCode += digit;
 
         // Limit the length of the code to avoid too many digits
-        if (enteredCode.Length >= 6)
+        if (enteredCode.Length >= 10)
         {
             enteredCode = ""; // Reset the code if it exceeds 6 digits
         }
