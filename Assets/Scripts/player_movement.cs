@@ -86,7 +86,7 @@ public class player_movement : MonoBehaviour
 
         }
 
-        if (codePanel.activeSelf || riddlePanel.activeSelf)
+        if (codePanel.activeSelf || riddlePanel.activeSelf || noKeyPanel.activeSelf)
         {
             Time.timeScale = 0f;
         }
