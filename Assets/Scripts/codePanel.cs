@@ -44,4 +44,14 @@ public class codePanel : MonoBehaviour
         // Update the input field text
         codeInputField.text = enteredCode;
     }
+
+    public void OnBackButtonClick()
+    {
+        Debug.Log("Back button clicked"); // Add this line for debugging
+                                          // Deactivate the code panel
+        gameObject.SetActive(false);
+
+        // Resume the game by setting the time scale back to 1
+        Time.timeScale = 1f;
+    }
 }
