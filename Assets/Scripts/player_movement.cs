@@ -26,11 +26,9 @@ public class player_movement : MonoBehaviour
     public GameObject instructionScreen;
     public GameObject instructionScreen2;
 
-<<<<<<< Updated upstream
-    public GameObject codePanel, closeDoor, openDoor, riddlePanel;
-=======
+
     public GameObject codePanel, closeDoor, openDoor, riddlePanel, noKeyPanel;
->>>>>>> Stashed changes
+
     private bool boxIsHit;
 
     public static bool isDoorOpen = false;
@@ -86,6 +84,15 @@ public class player_movement : MonoBehaviour
             closeDoor.SetActive(false);
             openDoor.SetActive(true);
 
+        }
+
+        if (codePanel.activeSelf || riddlePanel.activeSelf)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f; // Ensure time scale is set back to normal when the code panel is not active
         }
 
         //powerups
@@ -152,10 +159,17 @@ public class player_movement : MonoBehaviour
             codePanel.SetActive(true);
         }
 
-        Debug.Log("door was hit");
-        if (collision.tag == "puzzlebox" && !boxIsHit)
+        Debug.Log("box was hit");
+        if (collision.tag == "puzzleBox" && !boxIsHit)
         {
             riddlePanel.SetActive(true);
+        }
+
+
+        Debug.Log("box was hit");
+        if (collision.tag == "openBox" && !boxIsHit)
+        {
+            noKeyPanel.SetActive(true);
         }
 
         if (collision.tag == "Lettuce")
