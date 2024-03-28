@@ -26,7 +26,7 @@ public class player_movement : MonoBehaviour
     public GameObject instructionScreen;
     public GameObject instructionScreen2;
 
-    public GameObject codePanel, closeDoor, openDoor, riddlePanel;
+    public GameObject codePanel, closeDoor, openDoor, riddlePanel,noKeyPanel;
     private bool boxIsHit;
 
     public static bool isDoorOpen = false;
@@ -139,10 +139,17 @@ public class player_movement : MonoBehaviour
             codePanel.SetActive(true);
         }
 
-        Debug.Log("door was hit");
-        if (collision.tag == "puzzlebox" && !boxIsHit)
+        Debug.Log("box was hit");
+        if (collision.tag == "puzzleBox" && !boxIsHit)
         {
             riddlePanel.SetActive(true);
+        }
+
+
+        Debug.Log("box was hit");
+        if (collision.tag == "openBox" && !boxIsHit)
+        {
+            noKeyPanel.SetActive(true);
         }
 
         if (collision.tag == "Lettuce")
