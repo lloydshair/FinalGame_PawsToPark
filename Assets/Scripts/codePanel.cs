@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -43,5 +45,11 @@ public class codePanel : MonoBehaviour
 
         // Update the input field text
         codeInputField.text = enteredCode;
+    }
+
+    public void OnBackButtonClick()
+    {
+        gameObject.SetActive(false); // Deactivate the panel
+        Time.timeScale = 1f; // Resume the game
     }
 }
