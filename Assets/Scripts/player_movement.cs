@@ -84,6 +84,15 @@ public class player_movement : MonoBehaviour
 
         }
 
+        if (codePanel.activeSelf || riddlePanel.activeSelf)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f; // Ensure time scale is set back to normal when the code panel is not active
+        }
+
         //powerups
         if (isPowerActive)
         {
