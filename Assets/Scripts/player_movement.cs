@@ -23,6 +23,8 @@ public class player_movement : MonoBehaviour
 
 
     public GameObject gameOverScreen;
+    public GameObject instructionScreen;
+    public GameObject instructionScreen2;
 
     public GameObject codePanel, closeDoor, openDoor, riddlePanel;
     private bool boxIsHit;
@@ -142,6 +144,18 @@ public class player_movement : MonoBehaviour
         {
             riddlePanel.SetActive(true);
         }
+
+        if (collision.tag == "Lettuce")
+        {
+            StartCoroutine(ShowInstruction());
+
+        }
+
+        if (collision.tag == "Bottle")
+        {
+            StartCoroutine(ShowInstruction2());
+
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -176,6 +190,25 @@ public class player_movement : MonoBehaviour
         Debug.Log("Powerup gone speed gone back to " + moveSpeed);
     }
 
+    IEnumerator ShowInstruction()
+    {
+
+        instructionScreen.SetActive(true);
+
+        yield return new WaitForSeconds(4f);
+
+        instructionScreen.SetActive(false);
+
+    }
+
+    IEnumerator ShowInstruction2()
+    {
+        instructionScreen2.SetActive(true);
+
+        yield return new WaitForSeconds(4f);
+
+        instructionScreen2.SetActive(false);
+    }
 
 }
 
