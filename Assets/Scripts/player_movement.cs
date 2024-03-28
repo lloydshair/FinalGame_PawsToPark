@@ -26,7 +26,11 @@ public class player_movement : MonoBehaviour
     public GameObject instructionScreen;
     public GameObject instructionScreen2;
 
+<<<<<<< Updated upstream
     public GameObject codePanel, closeDoor, openDoor, riddlePanel;
+=======
+    public GameObject codePanel, closeDoor, openDoor, riddlePanel, noKeyPanel;
+>>>>>>> Stashed changes
     private bool boxIsHit;
 
     public static bool isDoorOpen = false;
@@ -76,7 +80,7 @@ public class player_movement : MonoBehaviour
             rbHamster.velocity = new Vector2(rbHamster.velocity.x, 0);
         }
 
-        if(isDoorOpen)
+        if (isDoorOpen)
         {
             codePanel.SetActive(false);
             closeDoor.SetActive(false);
@@ -93,6 +97,15 @@ public class player_movement : MonoBehaviour
             {
                 DeactivatePowerup();
             }
+        }
+
+        if (codePanel.activeSelf || riddlePanel.activeSelf || noKeyPanel.activeSelf)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f; // Ensure time scale is set back to normal when the code panel is not active
         }
     }
 
