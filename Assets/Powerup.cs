@@ -12,7 +12,7 @@ public class Powerup : MonoBehaviour
         //player 1
         if (collision.CompareTag("Player_01"))
         {
-            Hamster1Control ham = collision.GetComponent<Hamster1Control>();
+            player_movement ham = collision.GetComponent<player_movement>();
             if (ham != null)
             {
                 ham.ActivatePowerup();
@@ -25,7 +25,7 @@ public class Powerup : MonoBehaviour
         //player 2 
         else if (collision.CompareTag("Player_02"))
         {
-            Hamster2Control ham2 = collision.GetComponent<Hamster2Control>();
+            player_movement ham2 = collision.GetComponent<player_movement>();
             if (ham2 != null)
             {
                 ham2.ActivatePowerup();
