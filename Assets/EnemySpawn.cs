@@ -49,6 +49,7 @@ public class EnemySpawn : MonoBehaviour
         
     }
 
+
     public void UpdateFreezeTime()
     {
         //baby powerup
@@ -69,16 +70,20 @@ public class EnemySpawn : MonoBehaviour
         {
             isFrozen = true;
             freezeTimer = duration;
-            speed = 0f;
+            agent.velocity = Vector3.zero;
+            agent.isStopped = true;
             Debug.Log("enemy frozen for " + duration);
         }
-    
+
     }
 
     private void Unfreeze()
     {
         isFrozen = false;
-        speed = 2f;
+        agent.SetDestination(transform.position);
+        agent.velocity = Vector3.zero;
+        agent.isStopped = false;
         Debug.Log("baby unfrozen");
     }
+
 }
