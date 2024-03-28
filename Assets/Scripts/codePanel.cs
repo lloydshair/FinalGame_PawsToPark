@@ -27,6 +27,7 @@ public class codePanel : MonoBehaviour
         {
             // If the code is correct, perform actions like opening a door
             player_movement.isDoorOpen = true;
+            gameObject.SetActive(false);
         }
     }
 

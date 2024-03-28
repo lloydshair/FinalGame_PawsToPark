@@ -11,19 +11,19 @@ public class MainMenu : MonoBehaviour
     {
 
         Debug.Log("button is clicked");
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(3);
 
     }
 
     public void HowToPlay()
     {
 
-        SceneManager.LoadSceneAsync(3);
+        SceneManager.LoadSceneAsync(2);
     }
 
     public void Options() {
 
-        SceneManager.LoadSceneAsync(2);
+        SceneManager.LoadSceneAsync(1);
     }
 
 
