@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player_movement : MonoBehaviour
+public class Player_Movement_1 : MonoBehaviour
 {
 
     public float moveSpeed;
@@ -48,8 +48,8 @@ public class player_movement : MonoBehaviour
         closeDoor.SetActive(true);
         openDoor.SetActive(false);
         //hiding
-        custRender=GetComponent<SpriteRenderer>();
-        custRender.enabled=true;
+        custRender = GetComponent<SpriteRenderer>();
+        custRender.enabled = true;
     }
 
     // Update is called once per frame
@@ -121,7 +121,7 @@ public class player_movement : MonoBehaviour
         }
 
         // hiding 
-        if (Input.GetKey(KeyCode.M))
+        if (Input.GetKey(KeyCode.R))
         {
             custRender.enabled = false;
         }
@@ -140,7 +140,7 @@ public class player_movement : MonoBehaviour
 
 
         }
-       
+
     }
 
     IEnumerator Move(Vector3 targetPos)
@@ -156,7 +156,7 @@ public class player_movement : MonoBehaviour
         transform.position = targetPos;
         isMoving = false;
     }
-   
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("baby was hit");
@@ -170,7 +170,7 @@ public class player_movement : MonoBehaviour
         }
 
         Debug.Log("door was hit");
-        if(collision.tag =="door" && !isDoorOpen)
+        if (collision.tag == "door" && !isDoorOpen)
         {
             codePanel.SetActive(true);
         }
@@ -199,7 +199,7 @@ public class player_movement : MonoBehaviour
             StartCoroutine(ShowInstruction2());
 
         }
-       
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -209,10 +209,10 @@ public class player_movement : MonoBehaviour
             codePanel.SetActive(false);
 
         }
-      
+
     }
 
-public void ActivatePowerup()
+    public void ActivatePowerup()
     {
         if (!isPowerActive)
         {
