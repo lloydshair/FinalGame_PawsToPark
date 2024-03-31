@@ -35,10 +35,10 @@ public class player_movement : MonoBehaviour
 
     // hiding feature
     public SpriteRenderer custRender;
-
-
-
-
+    private bool isHidden = false;
+    private bool isPlayerVisibleToEnemy = true;
+    public LayerMask enemyLayer;
+    private Collider2D playerCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -48,11 +48,13 @@ public class player_movement : MonoBehaviour
         closeDoor.SetActive(true);
         openDoor.SetActive(false);
         //hiding
-        custRender=GetComponent<SpriteRenderer>();
-        custRender.enabled=true;
+        custRender = GetComponent<SpriteRenderer>();
+        custRender.enabled = true;
+        rbHamster = GetComponent<Rigidbody2D>();
+        playerCollider = GetComponent<Collider2D>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (Input.GetKey(left))
@@ -121,15 +123,45 @@ public class player_movement : MonoBehaviour
         }
 
         // hiding 
-        if (Input.GetKey(KeyCode.M))
-        {
-            custRender.enabled = false;
-        }
+
+
+        UpdateVisibilityToEnemy();
+        UpdateHiding();
+    }
+
+    void UpdateVisibilityToEnemy()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, Mathf.Infinity, enemyLayer);
+
+        if (hit.collider != null)
+            isPlayerVisibleToEnemy = true;
         else
+            isPlayerVisibleToEnemy = false;
+    }
+
+    void UpdateHiding()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
         {
-            custRender.enabled = true;
+            isHidden = !isHidden;
+            custRender.enabled = !isHidden;
+            // Disable the player's collider when hidden
+            playerCollider.enabled = !isHidden;
         }
     }
+
+    // Method to check if the player is hidden
+    public bool IsHidden()
+    {
+        return isHidden;
+    }
+
+    public bool IsPlayerVisibleToEnemy()
+    {
+        return isPlayerVisibleToEnemy;
+    }
+
+
 
     private void FixedUpdate()
     {
@@ -140,7 +172,7 @@ public class player_movement : MonoBehaviour
 
 
         }
-       
+
     }
 
     IEnumerator Move(Vector3 targetPos)
@@ -156,7 +188,7 @@ public class player_movement : MonoBehaviour
         transform.position = targetPos;
         isMoving = false;
     }
-   
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("baby was hit");
@@ -170,7 +202,7 @@ public class player_movement : MonoBehaviour
         }
 
         Debug.Log("door was hit");
-        if(collision.tag =="door" && !isDoorOpen)
+        if (collision.tag == "door" && !isDoorOpen)
         {
             codePanel.SetActive(true);
         }
@@ -199,7 +231,7 @@ public class player_movement : MonoBehaviour
             StartCoroutine(ShowInstruction2());
 
         }
-       
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -209,10 +241,10 @@ public class player_movement : MonoBehaviour
             codePanel.SetActive(false);
 
         }
-      
+
     }
 
-public void ActivatePowerup()
+    public void ActivatePowerup()
     {
         if (!isPowerActive)
         {

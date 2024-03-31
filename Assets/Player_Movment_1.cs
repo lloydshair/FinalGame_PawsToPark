@@ -35,10 +35,10 @@ public class Player_Movement_1 : MonoBehaviour
 
     // hiding feature
     public SpriteRenderer custRender;
-
-
-
-
+    private bool isHidden = false;
+    private bool isPlayerVisibleToEnemy = true; // Assume player is initially visible to enemy
+    public LayerMask enemyLayer;
+    private Collider2D playerCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -50,9 +50,11 @@ public class Player_Movement_1 : MonoBehaviour
         //hiding
         custRender = GetComponent<SpriteRenderer>();
         custRender.enabled = true;
+        rbHamster = GetComponent<Rigidbody2D>();
+        playerCollider = GetComponent<Collider2D>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if (Input.GetKey(left))
@@ -121,15 +123,46 @@ public class Player_Movement_1 : MonoBehaviour
         }
 
         // hiding 
-        if (Input.GetKey(KeyCode.R))
-        {
-            custRender.enabled = false;
-        }
+
+     
+        UpdateVisibilityToEnemy();
+        UpdateHiding();
+    }
+
+    void UpdateVisibilityToEnemy()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, Mathf.Infinity, enemyLayer);
+
+        if (hit.collider != null)
+            isPlayerVisibleToEnemy = true;
         else
+            isPlayerVisibleToEnemy = false;
+    }
+
+    void UpdateHiding()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            custRender.enabled = true;
+            isHidden = !isHidden;
+            custRender.enabled = !isHidden;
+            // Disable the player's collider when hidden
+            playerCollider.enabled = !isHidden;
         }
     }
+
+    // Method to check if the player is hidden
+
+    public bool IsHidden()
+    {
+        return isHidden;
+    }
+
+    public bool IsPlayerVisibleToEnemy()
+    {
+        return isPlayerVisibleToEnemy;
+    }
+
+
 
     private void FixedUpdate()
     {
