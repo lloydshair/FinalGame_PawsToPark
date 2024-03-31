@@ -40,7 +40,7 @@ public class player_movement : MonoBehaviour
     public LayerMask enemyLayer;
     private Collider2D playerCollider;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         rbHamster = GetComponent<Rigidbody2D>();
@@ -67,7 +67,7 @@ public class player_movement : MonoBehaviour
         }
         else
         {
-            // rbHamster.velocity = new Vector2(0, rbHamster.velocity.x);
+          
             rbHamster.velocity = new Vector2(0, rbHamster.velocity.y);
         }
 
@@ -99,7 +99,7 @@ public class player_movement : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 1f; // Ensure time scale is set back to normal when the code panel is not active
+            Time.timeScale = 1f; 
         }
 
         //powerups
@@ -119,7 +119,7 @@ public class player_movement : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 1f; // Ensure time scale is set back to normal when the code panel is not active
+            Time.timeScale = 1f; 
         }
 
         // hiding 

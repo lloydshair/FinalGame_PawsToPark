@@ -48,7 +48,7 @@ public class EnemySpawn : MonoBehaviour
         // Check if the player is visible and within attack range
         if (playerMovement != null && playerMovement.IsPlayerVisibleToEnemy() && IsPlayerWithinRange(chaseTarget.transform.position))
         {
-            // Attack the player
+            // Attacks the player
             AttackPlayer(chaseTarget.transform);
         }
         else if (!playerMovement.IsHidden()) // Check if the player is not hidden

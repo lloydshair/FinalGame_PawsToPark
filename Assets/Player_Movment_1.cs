@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Player_Movement_1 : MonoBehaviour
 {
+   //animation 
+    
+    Animator anim;
+    float dirX, moveSpeed;
+    bool facingRight = true;
+    Vector3 localScale;
 
-    public float moveSpeed;
 
     private Rigidbody2D rbHamster;
     public KeyCode left;
@@ -36,11 +42,11 @@ public class Player_Movement_1 : MonoBehaviour
     // hiding feature
     public SpriteRenderer custRender;
     private bool isHidden = false;
-    private bool isPlayerVisibleToEnemy = true; // Assume player is initially visible to enemy
+    private bool isPlayerVisibleToEnemy = true;
     public LayerMask enemyLayer;
     private Collider2D playerCollider;
 
-    // Start is called before the first frame update
+   
     void Start()
     {
         rbHamster = GetComponent<Rigidbody2D>();
@@ -52,11 +58,34 @@ public class Player_Movement_1 : MonoBehaviour
         custRender.enabled = true;
         rbHamster = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>();
+        //animation
+         anim = GetComponent<Animator>();
+        localScale = transform.localScale;
     }
 
     
     void Update()
     {
+
+        //aniamtion 
+
+        if (Input.GetKey(KeyCode.LeftShift))
+            moveSpeed = 3f;
+        else
+            moveSpeed = 2f;
+       
+        SetAnimationState();
+        dirX = Input.GetAxisRaw("Horizontal");
+
+        rbHamster.velocity = new Vector2(dirX * moveSpeed, rbHamster.velocity.y);
+
+        // Flip the player sprite if moving left or right
+        if (dirX != 0)
+        {
+            facingRight = dirX > 0;
+            FlipSprite();
+        }
+
         if (Input.GetKey(left))
         {
             rbHamster.velocity = new Vector2(-moveSpeed, rbHamster.velocity.y);
@@ -67,7 +96,7 @@ public class Player_Movement_1 : MonoBehaviour
         }
         else
         {
-            // rbHamster.velocity = new Vector2(0, rbHamster.velocity.x);
+          
             rbHamster.velocity = new Vector2(0, rbHamster.velocity.y);
         }
 
@@ -99,7 +128,7 @@ public class Player_Movement_1 : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 1f; // Ensure time scale is set back to normal when the code panel is not active
+            Time.timeScale = 1f; 
         }
 
         //powerups
@@ -119,14 +148,42 @@ public class Player_Movement_1 : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 1f; // Ensure time scale is set back to normal when the code panel is not active
+            Time.timeScale = 1f; 
         }
 
         // hiding 
-
-     
         UpdateVisibilityToEnemy();
         UpdateHiding();
+    }
+    void FlipSprite()
+    {
+        // Flip the player sprite horizontally if facing left
+        transform.localScale = new Vector3(facingRight ? localScale.x : -localScale.x, localScale.y, localScale.z);
+    }
+
+    //animation
+    void SetAnimationState()
+    {
+        anim.SetBool("walking", Mathf.Abs(dirX) > 0);
+        anim.SetBool("running", Input.GetKey(KeyCode.LeftShift));
+    }
+
+
+     void LateUpdate()
+    {
+        CheckWhereToFace();
+    }
+
+    void CheckWhereToFace()
+    {
+        if (dirX > 0)
+            facingRight = true;
+        else if (dirX < 0)
+            facingRight = false;
+        if (((facingRight) && (localScale.x < 0)) || ((!facingRight) && (localScale.x > 0)))
+                localScale.x *= -1;
+
+            transform.localScale = localScale;
     }
 
     void UpdateVisibilityToEnemy()
@@ -145,13 +202,12 @@ public class Player_Movement_1 : MonoBehaviour
         {
             isHidden = !isHidden;
             custRender.enabled = !isHidden;
-            // Disable the player's collider when hidden
+            // Disables the player's collider when hidden
             playerCollider.enabled = !isHidden;
         }
     }
 
     // Method to check if the player is hidden
-
     public bool IsHidden()
     {
         return isHidden;
@@ -168,12 +224,12 @@ public class Player_Movement_1 : MonoBehaviour
     {
         if (input2 != Vector3.zero)
         {
-            // Calculate the target position
+            // Calculates the target position
             GetComponent<Rigidbody2D>().velocity = input2 * moveSpeed; ;
 
 
         }
-
+        
     }
 
     IEnumerator Move(Vector3 targetPos)
