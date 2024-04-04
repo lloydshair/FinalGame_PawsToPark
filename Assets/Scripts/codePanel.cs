@@ -8,7 +8,7 @@ public class codePanel : MonoBehaviour
     string enteredCode = "";
 
     // Define your correct code here
-    string correctCode = "1916151475";
+    string correctCode = "1234";
 
     // Start is called before the first frame update
     void Start()
@@ -55,4 +55,5 @@ public class codePanel : MonoBehaviour
         // Resume the game by setting the time scale back to 1
         Time.timeScale = 1f;
     }
+
 }
