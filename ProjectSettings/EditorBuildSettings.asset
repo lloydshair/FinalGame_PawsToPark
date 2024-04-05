@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/FirstLevelReal.unity
     guid: fe91ecdbb7e44413db6bc15f3cbbf0df
+  - enabled: 1
+    path: Assets/Scenes/DupLevel1.unity
+    guid: 8d3625cb746db3949aa337e85f590f57
+  - enabled: 1
+    path: Assets/Scenes/Final_level.unity
+    guid: 9d48a85593445a94aba484c8e872ba19
   m_configObjects: {}
