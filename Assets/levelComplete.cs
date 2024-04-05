@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using System.Collections;
 public class levelComplete : MonoBehaviour
 {
     public int sceneBuildIndex;
@@ -8,6 +8,8 @@ public class levelComplete : MonoBehaviour
     private bool player1Entered = false;
     private bool player2Entered = false;
 
+    public Animator transition;
+    public float transitionTime = 1f;
     private void OnTriggerEnter2D(Collider2D other)
     {
         print("Trigger Entered");
@@ -25,8 +27,14 @@ public class levelComplete : MonoBehaviour
         if (player1Entered && player2Entered)
         {
             print("Switching Scene to " + sceneBuildIndex);
-            SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
         }
+    }
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(levelIndex);
     }
 }
 
