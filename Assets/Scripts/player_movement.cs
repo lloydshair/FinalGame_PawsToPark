@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class player_movement : MonoBehaviour
 {
+    //animation 
 
-    public float moveSpeed;
+    Animator anim;
+    float dirX, moveSpeed;
+    bool facingRight = true;
+    Vector3 localScale;
+
 
     private Rigidbody2D rbHamster;
     public KeyCode left;
@@ -52,11 +58,42 @@ public class player_movement : MonoBehaviour
         custRender.enabled = true;
         rbHamster = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>();
+        //animation
+        anim = GetComponent<Animator>();
+        localScale = transform.localScale;
     }
 
 
     void Update()
     {
+
+        //aniamtion 
+
+        if (isPowerActive && moveSpeed < 4f)
+        {
+            moveSpeed = 4f;
+        }
+        else
+        {
+           
+            if (Input.GetKey(KeyCode.LeftShift))
+                moveSpeed = 2f;
+            else
+                moveSpeed = 2f;
+        }
+
+        SetAnimationState();
+        dirX = Input.GetAxisRaw("Horizontal");
+
+        rbHamster.velocity = new Vector2(dirX * moveSpeed, rbHamster.velocity.y);
+
+        // Flip the player sprite if moving left or right
+        if (dirX != 0)
+        {
+            facingRight = dirX > 0;
+            FlipSprite();
+        }
+
         if (Input.GetKey(left))
         {
             rbHamster.velocity = new Vector2(-moveSpeed, rbHamster.velocity.y);
@@ -67,7 +104,7 @@ public class player_movement : MonoBehaviour
         }
         else
         {
-          
+
             rbHamster.velocity = new Vector2(0, rbHamster.velocity.y);
         }
 
@@ -99,7 +136,7 @@ public class player_movement : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 1f; 
+            Time.timeScale = 1f;
         }
 
         //powerups
@@ -119,14 +156,42 @@ public class player_movement : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 1f; 
+            Time.timeScale = 1f;
         }
 
         // hiding 
-
-
         UpdateVisibilityToEnemy();
         UpdateHiding();
+    }
+    void FlipSprite()
+    {
+        // Flip the player sprite horizontally if facing left
+        transform.localScale = new Vector3(facingRight ? localScale.x : -localScale.x, localScale.y, localScale.z);
+    }
+
+    //animation
+    void SetAnimationState()
+    {
+        anim.SetBool("Walking", Mathf.Abs(dirX) > 0);
+        anim.SetBool("Running", isPowerActive);
+    }
+
+
+    void LateUpdate()
+    {
+        CheckWhereToFace();
+    }
+
+    void CheckWhereToFace()
+    {
+        if (dirX > 0)
+            facingRight = true;
+        else if (dirX < 0)
+            facingRight = false;
+        if (((facingRight) && (localScale.x < 0)) || ((!facingRight) && (localScale.x > 0)))
+            localScale.x *= -1;
+
+        transform.localScale = localScale;
     }
 
     void UpdateVisibilityToEnemy()
@@ -141,11 +206,11 @@ public class player_movement : MonoBehaviour
 
     void UpdateHiding()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.RightControl))
         {
             isHidden = !isHidden;
             custRender.enabled = !isHidden;
-            // Disable the player's collider when hidden
+            // Disables the player's collider when hidden
             playerCollider.enabled = !isHidden;
         }
     }
@@ -167,7 +232,7 @@ public class player_movement : MonoBehaviour
     {
         if (input2 != Vector3.zero)
         {
-            // Calculate the target position
+            // Calculates the target position
             GetComponent<Rigidbody2D>().velocity = input2 * moveSpeed; ;
 
 
@@ -180,11 +245,11 @@ public class player_movement : MonoBehaviour
         isMoving = true;
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
-            // Move towards the target position
+            // Moves towards the target position
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
             yield return null;
         }
-        // Ensure that the position is exactly at the target position
+
         transform.position = targetPos;
         isMoving = false;
     }
@@ -222,8 +287,8 @@ public class player_movement : MonoBehaviour
 
         if (collision.tag == "Lettuce")
         {
-            StartCoroutine(ShowInstruction());
-
+            Debug.Log("Lettuce collision detected!");
+            ActivatePowerup();
         }
 
         if (collision.tag == "Bottle")
@@ -241,6 +306,11 @@ public class player_movement : MonoBehaviour
             codePanel.SetActive(false);
 
         }
+        if (collision.tag == "Lettuce")
+        {
+            Debug.Log("Lettuce powerup detected!"); // Add this line
+            ActivatePowerup();
+        }
 
     }
 
@@ -251,12 +321,11 @@ public class player_movement : MonoBehaviour
             moveSpeed += 3f;
             isPowerActive = true;
             powerTimer = powerDuration;
-            Debug.Log("Powerup collect with speed " + moveSpeed);
+            Debug.Log("Powerup activated. New moveSpeed: " + moveSpeed);
         }
         else
         {
             powerTimer = powerDuration;
-
         }
     }
 

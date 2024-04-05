@@ -69,11 +69,19 @@ public class Player_Movement_1 : MonoBehaviour
 
         //aniamtion 
 
-        if (Input.GetKey(KeyCode.LeftShift))
-            moveSpeed = 3f;
+        if (isPowerActive && moveSpeed < 4f)
+        {
+            moveSpeed = 4f;
+        }
         else
-            moveSpeed = 2f;
-       
+        {
+            
+            if (Input.GetKey(KeyCode.LeftShift))
+                moveSpeed = 2f;
+            else
+                moveSpeed = 2f;
+        }
+
         SetAnimationState();
         dirX = Input.GetAxisRaw("Horizontal");
 
@@ -165,7 +173,7 @@ public class Player_Movement_1 : MonoBehaviour
     void SetAnimationState()
     {
         anim.SetBool("walking", Mathf.Abs(dirX) > 0);
-        anim.SetBool("running", Input.GetKey(KeyCode.LeftShift));
+        anim.SetBool("running", isPowerActive);
     }
 
 
@@ -198,7 +206,7 @@ public class Player_Movement_1 : MonoBehaviour
 
     void UpdateHiding()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             isHidden = !isHidden;
             custRender.enabled = !isHidden;
@@ -237,11 +245,11 @@ public class Player_Movement_1 : MonoBehaviour
         isMoving = true;
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
-            // Move towards the target position
+            // Moves towards the target position
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
             yield return null;
         }
-        // Ensure that the position is exactly at the target position
+       
         transform.position = targetPos;
         isMoving = false;
     }
@@ -279,8 +287,8 @@ public class Player_Movement_1 : MonoBehaviour
 
         if (collision.tag == "Lettuce")
         {
-            StartCoroutine(ShowInstruction());
-
+            Debug.Log("Lettuce collision detected!");
+            ActivatePowerup();
         }
 
         if (collision.tag == "Bottle")
@@ -298,6 +306,11 @@ public class Player_Movement_1 : MonoBehaviour
             codePanel.SetActive(false);
 
         }
+        if (collision.tag == "Lettuce")
+        {
+            Debug.Log("Lettuce powerup detected!"); // Add this line
+            ActivatePowerup();
+        }
 
     }
 
@@ -308,12 +321,11 @@ public class Player_Movement_1 : MonoBehaviour
             moveSpeed += 3f;
             isPowerActive = true;
             powerTimer = powerDuration;
-            Debug.Log("Powerup collect with speed " + moveSpeed);
+            Debug.Log("Powerup activated. New moveSpeed: " + moveSpeed);
         }
         else
         {
             powerTimer = powerDuration;
-
         }
     }
 
