@@ -5,8 +5,9 @@ using UnityEngine.Rendering;
 
 public class Player_Movement_1 : MonoBehaviour
 {
-   //animation 
-    
+   
+    //animation 
+
     Animator anim;
     float dirX, moveSpeed;
     bool facingRight = true;
@@ -46,7 +47,7 @@ public class Player_Movement_1 : MonoBehaviour
     public LayerMask enemyLayer;
     private Collider2D playerCollider;
 
-   
+
     void Start()
     {
         rbHamster = GetComponent<Rigidbody2D>();
@@ -59,11 +60,11 @@ public class Player_Movement_1 : MonoBehaviour
         rbHamster = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>();
         //animation
-         anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         localScale = transform.localScale;
     }
 
-    
+
     void Update()
     {
 
@@ -75,7 +76,7 @@ public class Player_Movement_1 : MonoBehaviour
         }
         else
         {
-            
+
             if (Input.GetKey(KeyCode.LeftShift))
                 moveSpeed = 2f;
             else
@@ -104,7 +105,7 @@ public class Player_Movement_1 : MonoBehaviour
         }
         else
         {
-          
+
             rbHamster.velocity = new Vector2(0, rbHamster.velocity.y);
         }
 
@@ -136,7 +137,7 @@ public class Player_Movement_1 : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 1f; 
+            Time.timeScale = 1f;
         }
 
         //powerups
@@ -156,7 +157,7 @@ public class Player_Movement_1 : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 1f; 
+            Time.timeScale = 1f;
         }
 
         // hiding 
@@ -177,7 +178,7 @@ public class Player_Movement_1 : MonoBehaviour
     }
 
 
-     void LateUpdate()
+    void LateUpdate()
     {
         CheckWhereToFace();
     }
@@ -189,9 +190,9 @@ public class Player_Movement_1 : MonoBehaviour
         else if (dirX < 0)
             facingRight = false;
         if (((facingRight) && (localScale.x < 0)) || ((!facingRight) && (localScale.x > 0)))
-                localScale.x *= -1;
+            localScale.x *= -1;
 
-            transform.localScale = localScale;
+        transform.localScale = localScale;
     }
 
     void UpdateVisibilityToEnemy()
@@ -237,7 +238,7 @@ public class Player_Movement_1 : MonoBehaviour
 
 
         }
-        
+
     }
 
     IEnumerator Move(Vector3 targetPos)
@@ -249,7 +250,7 @@ public class Player_Movement_1 : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
             yield return null;
         }
-       
+
         transform.position = targetPos;
         isMoving = false;
     }
@@ -357,4 +358,6 @@ public class Player_Movement_1 : MonoBehaviour
     }
 
 }
+
+
 
