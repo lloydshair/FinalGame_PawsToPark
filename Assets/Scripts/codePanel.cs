@@ -8,7 +8,7 @@ public class codePanel : MonoBehaviour
     string enteredCode = "";
 
     // Define your correct code here
-    string correctCode = "1916151475";
+    string correctCode = "1234";
 
     // Start is called before the first frame update
     void Start()
@@ -37,9 +37,9 @@ public class codePanel : MonoBehaviour
         enteredCode += digit;
 
         // Limit the length of the code to avoid too many digits
-        if (enteredCode.Length >= 10)
+        if (enteredCode.Length > 4)
         {
-            enteredCode = ""; // Reset the code if it exceeds 6 digits
+            enteredCode = ""; // Reset the code if it exceeds 4 digits
         }
 
         // Update the input field text
@@ -55,4 +55,5 @@ public class codePanel : MonoBehaviour
         // Resume the game by setting the time scale back to 1
         Time.timeScale = 1f;
     }
+
 }
