@@ -2063,6 +2063,7 @@ GameObject:
   - component: {fileID: 193053187}
   - component: {fileID: 193053186}
   - component: {fileID: 193053188}
+  - component: {fileID: 193053189}
   m_Layer: 0
   m_Name: Hamster_02_0
   m_TagString: Player_02
@@ -2211,7 +2212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bda738c261223a42916ce256dfaabc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
   left: 276
   right: 275
   up: 273
@@ -2223,7 +2223,32 @@ MonoBehaviour:
   closeDoor: {fileID: 1025861022}
   openDoor: {fileID: 435759010}
   riddlePanel: {fileID: 1977283886}
-  noKeyPanel: {fileID: 0}
+  noKeyPanel: {fileID: 441423095}
+  custRender: {fileID: 0}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!95 &193053189
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193053182}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0bf603fe0ce547a43a94fa4d36b995a7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &198577143
 GameObject:
   m_ObjectHideFlags: 0
@@ -7227,6 +7252,7 @@ GameObject:
   - component: {fileID: 831001994}
   - component: {fileID: 831001996}
   - component: {fileID: 831001997}
+  - component: {fileID: 831001998}
   m_Layer: 0
   m_Name: Hamster_01_0
   m_TagString: Player_01
@@ -7372,10 +7398,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 831001989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bda738c261223a42916ce256dfaabc4, type: 3}
+  m_Script: {fileID: 11500000, guid: 1de1ef6c46660c04b9cbc1f154310d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
   left: 97
   right: 100
   up: 119
@@ -7387,7 +7412,32 @@ MonoBehaviour:
   closeDoor: {fileID: 1025861022}
   openDoor: {fileID: 435759010}
   riddlePanel: {fileID: 1977283886}
-  noKeyPanel: {fileID: 0}
+  noKeyPanel: {fileID: 441423095}
+  custRender: {fileID: 0}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!95 &831001998
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831001989}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8553e6ffe85b52e4eb3bddb02a48121f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &838619370
 GameObject:
   m_ObjectHideFlags: 0
@@ -10559,6 +10609,7 @@ GameObject:
   - component: {fileID: 1093264314}
   - component: {fileID: 1093264313}
   - component: {fileID: 1093264315}
+  - component: {fileID: 1093264316}
   m_Layer: 0
   m_Name: baby_0
   m_TagString: baby_0
@@ -10579,9 +10630,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 831001991}
+  targets: []
   player1: {fileID: 831001989}
   player2: {fileID: 193053182}
   speed: 1
+  animator: {fileID: 1093264316}
 --- !u!212 &1093264311
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10743,6 +10796,27 @@ NavMeshAgent:
   m_BaseOffset: 2.3501368
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &1093264316
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093264309}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ec768e5b73f57674d9e21e607408a5ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1096351327
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,6 +24,8 @@ public class EnemySpawn : MonoBehaviour
 
     //hiding
     private Player_Movement_1 playerMovement;
+    //animation 
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,11 @@ public class EnemySpawn : MonoBehaviour
         //hiding
         playerMovement = FindObjectOfType<Player_Movement_1>();
         agent = GetComponent<NavMeshAgent>();
+        //animation
+        if (animator == null)
+        {
+            Debug.LogError("Animator reference is not set on EnemySpawn script!");
+        }
     }
 
     // Update is called once per frame
@@ -63,6 +70,11 @@ public class EnemySpawn : MonoBehaviour
         }
 
         UpdateFreezeTime();
+        Vector3 movementDirection = agent.velocity.normalized;
+
+        animator.SetFloat("Horizontal", movementDirection.x);
+        animator.SetFloat("Vertical", movementDirection.y);
+        animator.SetFloat("speed",movementDirection.sqrMagnitude);
 
 
     }
