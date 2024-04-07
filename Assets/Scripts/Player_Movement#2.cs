@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class player_movement : MonoBehaviour
+public class Player_Movement_1 : MonoBehaviour
 {
+
     //animation 
 
     Animator anim;
@@ -172,8 +173,8 @@ public class player_movement : MonoBehaviour
     //animation
     void SetAnimationState()
     {
-        anim.SetBool("Walking", Mathf.Abs(dirX) > 0);
-        anim.SetBool("Running", isPowerActive);
+        anim.SetBool("walking", Mathf.Abs(dirX) > 0);
+        anim.SetBool("running", isPowerActive);
     }
 
 
@@ -206,7 +207,7 @@ public class player_movement : MonoBehaviour
 
     void UpdateHiding()
     {
-        if (Input.GetKeyDown(KeyCode.RightControl))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             isHidden = !isHidden;
             custRender.enabled = !isHidden;
@@ -357,6 +358,7 @@ public class player_movement : MonoBehaviour
     }
 
 }
+
 
 
 
