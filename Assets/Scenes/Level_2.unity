@@ -2068,6 +2068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bda738c261223a42916ce256dfaabc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 2
   left: 276
   right: 275
   up: 273
@@ -2080,10 +2081,6 @@ MonoBehaviour:
   openDoor: {fileID: 0}
   riddlePanel: {fileID: 0}
   noKeyPanel: {fileID: 0}
-  custRender: {fileID: 0}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!50 &193053186
 Rigidbody2D:
   serializedVersion: 4
@@ -7954,6 +7951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bda738c261223a42916ce256dfaabc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 2
   left: 97
   right: 100
   up: 119
@@ -7966,10 +7964,6 @@ MonoBehaviour:
   openDoor: {fileID: 0}
   riddlePanel: {fileID: 0}
   noKeyPanel: {fileID: 0}
-  custRender: {fileID: 0}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!58 &831001996
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9812,11 +9806,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  targets: []
   player1: {fileID: 831001989}
   player2: {fileID: 193053182}
   speed: 2
-  animator: {fileID: 0}
 --- !u!212 &1093264311
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33557,9 +33549,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a04d0e1ef3e4c088e7c7fc1fe80fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 0}
-  timerIcon: {fileID: 0}
-  TimerScript: {fileID: 0}
 --- !u!212 &1706525961
 SpriteRenderer:
   m_ObjectHideFlags: 0
