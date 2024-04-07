@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 using UnityEngine.AI;
+using static Cinemachine.CinemachineTargetGroup;
+
 public class EnemySpawn : MonoBehaviour
 {
     [SerializeField] Transform target;
+    [SerializeField] Transform[] targets;
+
     NavMeshAgent agent;
     public GameObject player1;
     public GameObject player2;
@@ -18,6 +22,9 @@ public class EnemySpawn : MonoBehaviour
     private bool isFrozen = false;
     private float freezeTimer = 0f;
 
+    //hiding
+    private Player_Movement_1 playerMovement;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,29 +32,52 @@ public class EnemySpawn : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
+        //hiding
+        playerMovement = FindObjectOfType<Player_Movement_1>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        distance1= Vector2.Distance(transform.position,player1.transform.position);
-        distance2 = Vector2.Distance(transform.position, player2.transform.position);
-        Vector2 target;
-        GameObject chaseTarget;
+        distance1 = Vector3.Distance(transform.position, player1.transform.position);
+        distance2 = Vector3.Distance(transform.position, player2.transform.position);
+        GameObject chaseTarget = distance1 > distance2 ? player2 : player1;
 
-        //Vector2 direction = player1.transform.position - transform.position;
-        if (distance1 > distance2)
+        // Check if the player is visible and within attack range
+        if (playerMovement != null && playerMovement.IsPlayerVisibleToEnemy() && IsPlayerWithinRange(chaseTarget.transform.position))
         {
-            chaseTarget = player2;
+            // Attacks the player
+            AttackPlayer(chaseTarget.transform);
         }
-        else  {
-            chaseTarget = player1;
+        else if (!playerMovement.IsHidden()) // Check if the player is not hidden
+        {
+            // Player is not hidden and is visible to the enemy, so chase the player
+            agent.SetDestination(chaseTarget.transform.position);
         }
-        agent.SetDestination(chaseTarget.transform.position);
+        else
+        {
+            GameObject otherPlayer = chaseTarget == player1 ? player2 : player1;
+            agent.SetDestination(otherPlayer.transform.position);
+        }
 
         UpdateFreezeTime();
-        
+
+
     }
+    public void AttackPlayer(Transform playerTransform)
+    {
+
+    }
+    //checks if player is within range
+    public bool IsPlayerWithinRange(Vector3 playerPosition)
+    {
+
+        float attackRange = 10f;
+        return Vector3.Distance(transform.position, playerPosition) <= attackRange;
+    }
+
 
 
     public void UpdateFreezeTime()
@@ -77,6 +107,23 @@ public class EnemySpawn : MonoBehaviour
 
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     private void Unfreeze()
     {
         isFrozen = false;
@@ -87,3 +134,5 @@ public class EnemySpawn : MonoBehaviour
     }
 
 }
+
+
