@@ -6,7 +6,8 @@ public class BottlePowerup : MonoBehaviour
 {
     private bool isCollected = false;
     private float freezeDuration = 10f;
-
+    public GameObject timer, timerIcon;
+    public timer TimerScript;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!isCollected)
@@ -19,6 +20,10 @@ public class BottlePowerup : MonoBehaviour
                     baby.FreezeBaby(freezeDuration);
                     isCollected = true;
                     Destroy(gameObject);
+                    timer.SetActive(true);
+                    timerIcon.SetActive(true);
+                    TimerScript.StartTimer();
+
                 }
             }
         }
