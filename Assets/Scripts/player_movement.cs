@@ -1,17 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class player_movement : MonoBehaviour
 {
-    //animation 
 
-    Animator anim;
-    float dirX, moveSpeed;
-    bool facingRight = true;
-    Vector3 localScale;
-
+    public float moveSpeed;
 
     private Rigidbody2D rbHamster;
     public KeyCode left;
@@ -39,61 +33,23 @@ public class player_movement : MonoBehaviour
 
     public static bool isDoorOpen = false;
 
-    // hiding feature
-    public SpriteRenderer custRender;
-    private bool isHidden = false;
-    private bool isPlayerVisibleToEnemy = true;
-    public LayerMask enemyLayer;
-    private Collider2D playerCollider;
 
 
+
+
+    // Start is called before the first frame update
     void Start()
     {
         rbHamster = GetComponent<Rigidbody2D>();
         codePanel.SetActive(false);
         closeDoor.SetActive(true);
         openDoor.SetActive(false);
-        //hiding
-        custRender = GetComponent<SpriteRenderer>();
-        custRender.enabled = true;
-        rbHamster = GetComponent<Rigidbody2D>();
-        playerCollider = GetComponent<Collider2D>();
-        //animation
-        anim = GetComponent<Animator>();
-        localScale = transform.localScale;
+
     }
 
-
+    // Update is called once per frame
     void Update()
     {
-
-        //aniamtion 
-
-        if (isPowerActive && moveSpeed < 4f)
-        {
-            moveSpeed = 4f;
-        }
-        else
-        {
-
-            if (Input.GetKey(KeyCode.LeftShift))
-                moveSpeed = 2f;
-            else
-                moveSpeed = 2f;
-        }
-
-        SetAnimationState();
-        dirX = Input.GetAxisRaw("Horizontal");
-
-        rbHamster.velocity = new Vector2(dirX * moveSpeed, rbHamster.velocity.y);
-
-        // Flip the player sprite if moving left or right
-        if (dirX != 0)
-        {
-            facingRight = dirX > 0;
-            FlipSprite();
-        }
-
         if (Input.GetKey(left))
         {
             rbHamster.velocity = new Vector2(-moveSpeed, rbHamster.velocity.y);
@@ -104,7 +60,7 @@ public class player_movement : MonoBehaviour
         }
         else
         {
-
+            // rbHamster.velocity = new Vector2(0, rbHamster.velocity.x);
             rbHamster.velocity = new Vector2(0, rbHamster.velocity.y);
         }
 
@@ -136,7 +92,7 @@ public class player_movement : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 1f;
+            Time.timeScale = 1f; // Ensure time scale is set back to normal when the code panel is not active
         }
 
         //powerups
@@ -156,88 +112,19 @@ public class player_movement : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 1f;
-        }
-
-        // hiding 
-        UpdateVisibilityToEnemy();
-        UpdateHiding();
-    }
-    void FlipSprite()
-    {
-        // Flip the player sprite horizontally if facing left
-        transform.localScale = new Vector3(facingRight ? localScale.x : -localScale.x, localScale.y, localScale.z);
-    }
-
-    //animation
-    void SetAnimationState()
-    {
-        anim.SetBool("Walking", Mathf.Abs(dirX) > 0);
-        anim.SetBool("Running", isPowerActive);
-    }
-
-
-    void LateUpdate()
-    {
-        CheckWhereToFace();
-    }
-
-    void CheckWhereToFace()
-    {
-        if (dirX > 0)
-            facingRight = true;
-        else if (dirX < 0)
-            facingRight = false;
-        if (((facingRight) && (localScale.x < 0)) || ((!facingRight) && (localScale.x > 0)))
-            localScale.x *= -1;
-
-        transform.localScale = localScale;
-    }
-
-    void UpdateVisibilityToEnemy()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, Mathf.Infinity, enemyLayer);
-
-        if (hit.collider != null)
-            isPlayerVisibleToEnemy = true;
-        else
-            isPlayerVisibleToEnemy = false;
-    }
-
-    void UpdateHiding()
-    {
-        if (Input.GetKeyDown(KeyCode.RightControl))
-        {
-            isHidden = !isHidden;
-            custRender.enabled = !isHidden;
-            // Disables the player's collider when hidden
-            playerCollider.enabled = !isHidden;
+            Time.timeScale = 1f; // Ensure time scale is set back to normal when the code panel is not active
         }
     }
-
-    // Method to check if the player is hidden
-    public bool IsHidden()
-    {
-        return isHidden;
-    }
-
-    public bool IsPlayerVisibleToEnemy()
-    {
-        return isPlayerVisibleToEnemy;
-    }
-
-
 
     private void FixedUpdate()
     {
         if (input2 != Vector3.zero)
         {
-            // Calculates the target position
+            // Calculate the target position
             GetComponent<Rigidbody2D>().velocity = input2 * moveSpeed; ;
 
 
         }
-
     }
 
     IEnumerator Move(Vector3 targetPos)
@@ -245,15 +132,15 @@ public class player_movement : MonoBehaviour
         isMoving = true;
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
-            // Moves towards the target position
+            // Move towards the target position
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
             yield return null;
         }
-
+        // Ensure that the position is exactly at the target position
         transform.position = targetPos;
         isMoving = false;
     }
-
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("baby was hit");
@@ -267,7 +154,7 @@ public class player_movement : MonoBehaviour
         }
 
         Debug.Log("door was hit");
-        if (collision.tag == "door" && !isDoorOpen)
+        if(collision.tag =="door" && !isDoorOpen)
         {
             codePanel.SetActive(true);
         }
@@ -287,8 +174,8 @@ public class player_movement : MonoBehaviour
 
         if (collision.tag == "Lettuce")
         {
-            Debug.Log("Lettuce collision detected!");
-            ActivatePowerup();
+            StartCoroutine(ShowInstruction());
+
         }
 
         if (collision.tag == "Bottle")
@@ -296,7 +183,6 @@ public class player_movement : MonoBehaviour
             StartCoroutine(ShowInstruction2());
 
         }
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -306,12 +192,6 @@ public class player_movement : MonoBehaviour
             codePanel.SetActive(false);
 
         }
-        if (collision.tag == "Lettuce")
-        {
-            Debug.Log("Lettuce powerup detected!"); // Add this line
-            ActivatePowerup();
-        }
-
     }
 
     public void ActivatePowerup()
@@ -321,11 +201,12 @@ public class player_movement : MonoBehaviour
             moveSpeed += 3f;
             isPowerActive = true;
             powerTimer = powerDuration;
-            Debug.Log("Powerup activated. New moveSpeed: " + moveSpeed);
+            Debug.Log("Powerup collect with speed " + moveSpeed);
         }
         else
         {
             powerTimer = powerDuration;
+
         }
     }
 
@@ -357,6 +238,4 @@ public class player_movement : MonoBehaviour
     }
 
 }
-
-
 
