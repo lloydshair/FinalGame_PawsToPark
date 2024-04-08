@@ -13256,6 +13256,7 @@ GameObject:
   - component: {fileID: 1093264313}
   - component: {fileID: 1093264315}
   - component: {fileID: 1093264316}
+  - component: {fileID: 1093264317}
   m_Layer: 0
   m_Name: baby_0
   m_TagString: baby_0
@@ -13441,6 +13442,28 @@ MonoBehaviour:
   player2: {fileID: 193053182}
   speed: 2
   animator: {fileID: 1093264315}
+--- !u!195 &1093264317
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093264309}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1.65
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 4.7002735
+  m_BaseOffset: 2.3501368
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1165854455
 GameObject:
   m_ObjectHideFlags: 0
@@ -30714,7 +30737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1969652191
 Transform:
   m_ObjectHideFlags: 0
