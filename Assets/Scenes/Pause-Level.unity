@@ -2353,6 +2353,7 @@ MonoBehaviour:
   gameOverScreen: {fileID: 1556047146}
   instructionScreen: {fileID: 1727097707}
   instructionScreen2: {fileID: 2134496184}
+  pauseMenu: {fileID: 410630469}
   codePanel: {fileID: 919458520}
   closeDoor: {fileID: 1025861022}
   openDoor: {fileID: 435759010}
@@ -8008,6 +8009,7 @@ MonoBehaviour:
   gameOverScreen: {fileID: 1556047146}
   instructionScreen: {fileID: 1727097707}
   instructionScreen2: {fileID: 2134496184}
+  pauseMenu: {fileID: 410630469}
   codePanel: {fileID: 919458520}
   closeDoor: {fileID: 1025861022}
   openDoor: {fileID: 435759010}
@@ -11224,7 +11226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerText: {fileID: 151649191}
-  startingTime: 10
+  BottlestartingTime: 10
 --- !u!224 &1062516928 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8120167978678784678, guid: 9120ab07a26296f428111846970aa944, type: 3}
@@ -15616,8 +15618,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a04d0e1ef3e4c088e7c7fc1fe80fe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 151649190}
-  timerIcon: {fileID: 703826263}
+  timerBottle: {fileID: 0}
+  sleepIcon: {fileID: 0}
   TimerScript: {fileID: 1062516924}
 --- !u!212 &1565126183
 SpriteRenderer:
@@ -30129,6 +30131,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instructionScreen: {fileID: 0}
+  timer: {fileID: 0}
+  timerIcon: {fileID: 0}
+  TimerScript: {fileID: 0}
 --- !u!212 &1957723142
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31033,6 +31038,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instructionScreen: {fileID: 0}
+  timer: {fileID: 0}
+  timerIcon: {fileID: 0}
+  TimerScript: {fileID: 0}
 --- !u!212 &2008140552
 SpriteRenderer:
   m_ObjectHideFlags: 0

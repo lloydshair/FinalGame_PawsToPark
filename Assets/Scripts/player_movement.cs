@@ -32,7 +32,7 @@ public class player_movement : MonoBehaviour
     public GameObject instructionScreen;
     public GameObject instructionScreen2;
 
-
+    public GameObject pauseMenu;
     public GameObject codePanel, closeDoor, openDoor, riddlePanel, noKeyPanel;
 
     private bool boxIsHit;
@@ -130,7 +130,7 @@ public class player_movement : MonoBehaviour
 
         }
 
-        if (codePanel.activeSelf || riddlePanel.activeSelf || noKeyPanel.activeSelf)
+        if (codePanel.activeSelf || riddlePanel.activeSelf || noKeyPanel.activeSelf || pauseMenu.activeSelf)
         {
             Time.timeScale = 0f;
         }
@@ -150,7 +150,7 @@ public class player_movement : MonoBehaviour
             }
         }
 
-        if (codePanel.activeSelf || riddlePanel.activeSelf || noKeyPanel.activeSelf)
+        if (codePanel.activeSelf || riddlePanel.activeSelf || noKeyPanel.activeSelf || pauseMenu.activeSelf)
         {
             Time.timeScale = 0f;
         }
