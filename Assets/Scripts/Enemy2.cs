@@ -5,7 +5,7 @@ using static UnityEngine.GraphicsBuffer;
 using UnityEngine.AI;
 using static Cinemachine.CinemachineTargetGroup;
 
-public class EnemySpawn : MonoBehaviour
+public class Enemy2 : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] Transform[] targets;
@@ -23,7 +23,7 @@ public class EnemySpawn : MonoBehaviour
     private float freezeTimer = 0f;
 
     //hiding
-    private Player_Movement_1 playerMovement;
+    private level2hams2 playerMovement;
     //animation 
     public Animator animator;
 
@@ -36,7 +36,7 @@ public class EnemySpawn : MonoBehaviour
         agent.updateUpAxis = false;
 
         //hiding
-        playerMovement = FindObjectOfType<Player_Movement_1>();
+        playerMovement = FindObjectOfType<level2hams2>();
         agent = GetComponent<NavMeshAgent>();
         //animation
         if (animator == null)
@@ -72,9 +72,9 @@ public class EnemySpawn : MonoBehaviour
         UpdateFreezeTime();
         Vector3 movementDirection = agent.velocity.normalized;
 
-        animator.SetFloat("Horizontal", movementDirection.x);
-        animator.SetFloat("Vertical", movementDirection.y);
-        animator.SetFloat("speed", movementDirection.sqrMagnitude);
+        animator.SetFloat("Horizontals", movementDirection.x);
+        animator.SetFloat("Verticals", movementDirection.y);
+        animator.SetFloat("speeds", movementDirection.sqrMagnitude);
 
 
     }
