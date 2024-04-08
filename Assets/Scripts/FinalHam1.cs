@@ -30,7 +30,7 @@ public class FinalHam1 : MonoBehaviour
 
 
     public GameObject gameOverScreen;
-
+    public GameObject pauseMenu;
 
 
 
@@ -120,6 +120,14 @@ public class FinalHam1 : MonoBehaviour
             rbHamster.velocity = new Vector2(rbHamster.velocity.x, 0);
         }
 
+        if (pauseMenu.activeSelf)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
 
         //powerups
         if (isPowerActive)
