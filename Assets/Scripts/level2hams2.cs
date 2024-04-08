@@ -75,9 +75,9 @@ public class level2hams2 : MonoBehaviour
         {
 
             if (Input.GetKey(KeyCode.LeftShift))
-                moveSpeed2 = 2f;
+                moveSpeed2 = 3f;
             else
-                moveSpeed2 = 2f;
+                moveSpeed2 = 3f;
         }
 
         SetAnimationState();
