@@ -26,7 +26,6 @@ public class levelComplete : MonoBehaviour
 
         if (player1Entered && player2Entered)
         {
-            print("Switching Scene to " + sceneBuildIndex);
             StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
         }
     }
@@ -34,7 +33,7 @@ public class levelComplete : MonoBehaviour
     {
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene(levelIndex);
+        SceneManager.LoadScene("Next_Level");
     }
 }
 
