@@ -6,8 +6,7 @@ public class Powerup : MonoBehaviour
 {
     private bool isCollected = false;
     public GameObject instructionScreen;
-    public GameObject timer, timerIcon;
-    public LettuceTimer TimerScript;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //player 1
@@ -17,9 +16,6 @@ public class Powerup : MonoBehaviour
             if (ham != null)
             {
                 ham.ActivatePowerup();
-                timer.SetActive(true);
-                timerIcon.SetActive(true);
-                TimerScript.StartTimer();
             }
 
             isCollected = true;
@@ -33,9 +29,6 @@ public class Powerup : MonoBehaviour
             if (ham2 != null)
             {
                 ham2.ActivatePowerup();
-                timer.SetActive(true);
-                timerIcon.SetActive(true);
-                TimerScript.StartTimer();
             }
             isCollected = true;
 
