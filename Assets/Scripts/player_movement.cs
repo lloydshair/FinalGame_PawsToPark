@@ -24,7 +24,7 @@ public class player_movement : MonoBehaviour
     private bool isHit;
 
     private bool isPowerActive = false;
-    private float powerDuration = 30f;
+    private float powerDuration = 15f;
     private float powerTimer = 0f;
 
 
