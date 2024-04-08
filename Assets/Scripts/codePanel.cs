@@ -8,7 +8,7 @@ public class codePanel : MonoBehaviour
     string enteredCode = "";
 
     // Define your correct code here
-    string correctCode = "1234";
+    string correctCode = "2797";
 
     // Start is called before the first frame update
     void Start()
