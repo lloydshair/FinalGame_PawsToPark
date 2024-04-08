@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class LettuceTimer : MonoBehaviour
+public class timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI TimerText;
 
     [SerializeField] float startingTime = 10f;
     private float remainingTime;
     private bool timerRunning = false;
+
     public void StartTimer()
     {
         remainingTime = startingTime;
@@ -27,12 +28,11 @@ public class LettuceTimer : MonoBehaviour
         {
             remainingTime = 0;
 
-            //time over 
+            //time over - baby is up!
             timerRunning = false;
             gameObject.SetActive(false); // Disabling the timer GameObject when time reaches 0
         }
 
-        
 
 
         int minutes = Mathf.FloorToInt(remainingTime / 60);
