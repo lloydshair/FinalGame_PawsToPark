@@ -207,7 +207,7 @@ public class Player_Movement_1 : MonoBehaviour
 
     void UpdateHiding()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             isHidden = !isHidden;
             custRender.enabled = !isHidden;

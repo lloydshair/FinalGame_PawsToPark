@@ -74,7 +74,7 @@ public class EnemySpawn : MonoBehaviour
 
         animator.SetFloat("Horizontal", movementDirection.x);
         animator.SetFloat("Vertical", movementDirection.y);
-        animator.SetFloat("speed",movementDirection.sqrMagnitude);
+        animator.SetFloat("speed", movementDirection.sqrMagnitude);
 
 
     }
@@ -119,23 +119,6 @@ public class EnemySpawn : MonoBehaviour
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     private void Unfreeze()
     {
         isFrozen = false;
@@ -146,5 +129,7 @@ public class EnemySpawn : MonoBehaviour
     }
 
 }
+
+
 
 

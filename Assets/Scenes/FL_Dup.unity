@@ -1982,7 +1982,6 @@ GameObject:
   - component: {fileID: 193053185}
   - component: {fileID: 193053187}
   - component: {fileID: 193053186}
-  - component: {fileID: 193053188}
   m_Layer: 0
   m_Name: Hamster_02_0
   m_TagString: Player_02
@@ -2147,27 +2146,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.1651258
---- !u!95 &193053188
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193053182}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dcf29048cdd33d64ba5cd67751403ad8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &240858294
 GameObject:
   m_ObjectHideFlags: 0
@@ -7861,9 +7839,8 @@ GameObject:
   - component: {fileID: 831001991}
   - component: {fileID: 831001990}
   - component: {fileID: 831001994}
+  - component: {fileID: 831001995}
   - component: {fileID: 831001996}
-  - component: {fileID: 831001998}
-  - component: {fileID: 831001997}
   m_Layer: 0
   m_Name: Hamster_01_0
   m_TagString: Player_01
@@ -7911,7 +7888,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: -376488274, guid: 129da9d307ada06479d8523465563add, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7965,6 +7942,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &831001995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831001989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bda738c261223a42916ce256dfaabc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  left: 97
+  right: 100
+  up: 119
+  down: 115
+  gameOverScreen: {fileID: 1556047146}
+  instructionScreen: {fileID: 0}
+  instructionScreen2: {fileID: 0}
+  codePanel: {fileID: 0}
+  closeDoor: {fileID: 0}
+  openDoor: {fileID: 0}
+  riddlePanel: {fileID: 0}
+  noKeyPanel: {fileID: 0}
+  custRender: {fileID: 0}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!58 &831001996
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8000,55 +8005,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.2032807
---- !u!95 &831001997
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831001989}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 45d0d102bed6bcd449f8aee6178ecb6b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &831001998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 831001989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1de1ef6c46660c04b9cbc1f154310d5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  left: 97
-  right: 100
-  up: 119
-  down: 115
-  gameOverScreen: {fileID: 1902869072}
-  instructionScreen: {fileID: 0}
-  instructionScreen2: {fileID: 0}
-  codePanel: {fileID: 0}
-  closeDoor: {fileID: 0}
-  openDoor: {fileID: 0}
-  riddlePanel: {fileID: 0}
-  noKeyPanel: {fileID: 0}
-  custRender: {fileID: 0}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &884155110
 GameObject:
   m_ObjectHideFlags: 0
@@ -9836,7 +9792,6 @@ GameObject:
   - component: {fileID: 1093264310}
   - component: {fileID: 1093264314}
   - component: {fileID: 1093264313}
-  - component: {fileID: 1093264315}
   m_Layer: 0
   m_Name: baby_0
   m_TagString: baby_0
@@ -9856,12 +9811,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957ebb015cc0aa94bb3d870d7eac4cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 831001991}
+  target: {fileID: 0}
   targets: []
   player1: {fileID: 831001989}
   player2: {fileID: 193053182}
   speed: 2
-  animator: {fileID: 1093264315}
+  animator: {fileID: 0}
 --- !u!212 &1093264311
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10001,27 +9956,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &1093264315
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093264309}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e9b2e2c80ca43054696fccb90b92010a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1139848603
 GameObject:
   m_ObjectHideFlags: 0
