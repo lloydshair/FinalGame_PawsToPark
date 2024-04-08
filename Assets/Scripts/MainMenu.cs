@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
     {
 
         Debug.Log("button is clicked");
-        SceneManager.LoadSceneAsync(6);
+        SceneManager.LoadSceneAsync(7);
 
     }
 
