@@ -31,9 +31,10 @@ public class level2hams2 : MonoBehaviour
 
     public GameObject gameOverScreen;
     public GameObject pauseMenu;
+    public GameObject riddle;
 
 
-
+    public GameObject pinPad;
 
     private bool boxIsHit;
 
@@ -120,7 +121,7 @@ public class level2hams2 : MonoBehaviour
             rbHamster.velocity = new Vector2(rbHamster.velocity.x, 0);
         }
 
-        if (pauseMenu.activeSelf)
+        if (pauseMenu.activeSelf || riddle.activeSelf || pinPad.activeSelf)
         {
             Time.timeScale = 0f;
         }
@@ -256,7 +257,17 @@ public class level2hams2 : MonoBehaviour
             ActivatePowerup();
         }
 
-       
+        if (collision.tag == "exit")
+        {
+            pinPad.SetActive(true);
+        }
+
+        if (collision.tag == "sideTable")
+        {
+            riddle.SetActive(true);
+        }
+
+
 
     }
 

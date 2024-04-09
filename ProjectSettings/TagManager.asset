@@ -12,7 +12,10 @@ TagManager:
   - Lettuce
   - openBox
   - puzzleBox
-  - BoxCollider
+
+  - sideTable
+  - exit
+
   layers:
   - Default
   - TransparentFX
