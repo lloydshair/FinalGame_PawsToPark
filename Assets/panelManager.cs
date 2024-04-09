@@ -1,15 +1,14 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 
-public class codePanel : MonoBehaviour
+public class panelManager: MonoBehaviour
 {
     [SerializeField]
     TMP_InputField codeInputField;
     string enteredCode = "";
 
     // Define your correct code here
-    string correctCode = "2797";
+    string correctCode = "5849";
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +28,6 @@ public class codePanel : MonoBehaviour
             // If the code is correct, perform actions like opening a door
             player_movement.isDoorOpen = true;
             gameObject.SetActive(false);
-            SceneManager.LoadScene("Next_Level2");
         }
     }
 
@@ -56,15 +54,6 @@ public class codePanel : MonoBehaviour
 
         // Resume the game by setting the time scale back to 1
         Time.timeScale = 1f;
-    }
-
-    public void onBackRiddleButtonClicked()
-    {
-        gameObject.SetActive(false);
-
-        // Resume the game by setting the time scale back to 1
-        Time.timeScale = 1f;
-
     }
 
 }

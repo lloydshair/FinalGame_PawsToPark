@@ -4,14 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
- - door
+  - door
   - Player_02
   - Player_01
   - baby_0
   - Bottle
   - Lettuce
-  - openBox  
+  - openBox
   - puzzleBox
+  - sideTable
+  - exit
   layers:
   - Default
   - TransparentFX
