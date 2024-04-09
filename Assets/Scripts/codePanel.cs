@@ -29,8 +29,7 @@ public class codePanel : MonoBehaviour
             // If the code is correct, perform actions like opening a door
             player_movement.isDoorOpen = true;
             gameObject.SetActive(false);
-            SceneManager.LoadScene("Next_Level2");
-        }
+
     }
 
     public void AddDigit(string digit)

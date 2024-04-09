@@ -1,6 +1,9 @@
 using UnityEngine;
 using TMPro;
 
+using UnityEngine.SceneManagement;
+
+
 public class panelManager: MonoBehaviour
 {
     [SerializeField]
@@ -25,9 +28,11 @@ public class panelManager: MonoBehaviour
         // Check if the entered code matches the correct code
         if (enteredCode == correctCode)
         {
-            // If the code is correct, perform actions like opening a door
-            player_movement.isDoorOpen = true;
+
+           
             gameObject.SetActive(false);
+            SceneManager.LoadScene("Next_Level2");
+
         }
     }
 
