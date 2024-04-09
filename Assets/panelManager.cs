@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
+
 using UnityEngine.SceneManagement;
+
 
 public class panelManager: MonoBehaviour
 {
@@ -26,9 +28,11 @@ public class panelManager: MonoBehaviour
         // Check if the entered code matches the correct code
         if (enteredCode == correctCode)
         {
+
            
             gameObject.SetActive(false);
             SceneManager.LoadScene("Next_Level2");
+
         }
     }
 
