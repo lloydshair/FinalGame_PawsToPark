@@ -1,14 +1,15 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
-public class codePanel : MonoBehaviour
+public class panelManager: MonoBehaviour
 {
     [SerializeField]
     TMP_InputField codeInputField;
     string enteredCode = "";
 
     // Define your correct code here
-    string correctCode = "2797";
+    string correctCode = "5849";
 
     // Start is called before the first frame update
     void Start()
@@ -25,13 +26,9 @@ public class codePanel : MonoBehaviour
         // Check if the entered code matches the correct code
         if (enteredCode == correctCode)
         {
-            // If the code is correct, perform actions like opening a door
-            player_movement.isDoorOpen = true;
+           
             gameObject.SetActive(false);
-<<<<<<< Updated upstream
-=======
-            
->>>>>>> Stashed changes
+            SceneManager.LoadScene("Next_Level2");
         }
     }
 
