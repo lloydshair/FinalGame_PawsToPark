@@ -75,9 +75,9 @@ public class FinalHam1 : MonoBehaviour
         {
 
             if (Input.GetKey(KeyCode.LeftShift))
-                moveSpeed4 = 2f;
+                moveSpeed4 = 3f;
             else
-                moveSpeed4 = 2f;
+                moveSpeed4 = 3f;
         }
 
         SetAnimationState();
