@@ -15,9 +15,14 @@ public class BottlePowerup : MonoBehaviour
             if (collision.CompareTag("Player_01") || collision.CompareTag("Player_02"))
             {
                 EnemySpawn baby = FindAnyObjectByType<EnemySpawn>();
-                if (baby != null)
+                Enemy2 baby2 = FindAnyObjectByType<Enemy2>();
+                BabyFinal baby3 = FindAnyObjectByType<BabyFinal>();
+
+                if (baby != null || baby2 != null || baby3 != null)
                 {
                     baby.FreezeBaby(freezeDuration);
+                    baby2.FreezeBaby(freezeDuration);
+                    baby3.FreezeBaby(freezeDuration);
                     isCollected = true;
                     Destroy(gameObject);
                     timer.SetActive(true);
