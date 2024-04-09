@@ -189,7 +189,7 @@ public class level2hams2 : MonoBehaviour
 
     void UpdateHiding()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.RightControl))
         {
             isHidden = !isHidden;
             custRender.enabled = !isHidden;
