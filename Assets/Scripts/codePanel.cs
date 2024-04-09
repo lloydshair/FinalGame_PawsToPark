@@ -29,7 +29,7 @@ public class codePanel : MonoBehaviour
             // If the code is correct, perform actions like opening a door
             player_movement.isDoorOpen = true;
             gameObject.SetActive(false);
-
+        }
     }
 
     public void AddDigit(string digit)
@@ -63,7 +63,5 @@ public class codePanel : MonoBehaviour
 
         // Resume the game by setting the time scale back to 1
         Time.timeScale = 1f;
-
     }
-
 }
